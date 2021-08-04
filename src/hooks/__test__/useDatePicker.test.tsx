@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event'
 // scripts
 import { dateFormatString } from '../../utils'
 // mock
-import { DatePicker } from '../__mock__/DatePicker'
+import { DatePicker } from './DatePicker'
 
 // 20th May 2020
 const initialDate = new Date(2020, 4, 20, 0, 0, 0, 0)
@@ -19,11 +19,11 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       const selectedDateLabel = screen.getByText(/selected date:/i)
       const viewDateLabel = screen.getByText(/view date:/i)
 
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2020-05-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2020-05-20`)
 
-      expect(screen.getByTestId('2020-05-01').textContent).toBe('01')
-      expect(screen.getByTestId('2020-05-31').textContent).toBe('31')
+      expect(screen.getByTestId('2020-05-01')).toHaveTextContent('01')
+      expect(screen.getByTestId('2020-05-31')).toHaveTextContent('31')
     })
 
     it('should go to February 2020, on `Go to February` clicked.', () => {
@@ -37,11 +37,11 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       })
 
       userEvent.click(goToFebruaryBtn)
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2020-02-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2020-02-20`)
 
-      expect(screen.getByTestId('2020-02-01').textContent).toBe('01')
-      expect(screen.getByTestId('2020-02-29').textContent).toBe('29')
+      expect(screen.getByTestId('2020-02-01')).toHaveTextContent('01')
+      expect(screen.getByTestId('2020-02-29')).toHaveTextContent('29')
     })
 
     it('should go to 2018, on `Go to 2018` clicked.', () => {
@@ -55,11 +55,11 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       })
 
       userEvent.click(goTo2018Btn)
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2018-05-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2018-05-20`)
 
-      expect(screen.getByTestId('2018-05-01').textContent).toBe('01')
-      expect(screen.getByTestId('2018-05-31').textContent).toBe('31')
+      expect(screen.getByTestId('2018-05-01')).toHaveTextContent('01')
+      expect(screen.getByTestId('2018-05-31')).toHaveTextContent('31')
     })
 
     it('should change to June 2020, on `Next Month` clicked.', () => {
@@ -71,11 +71,11 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       const nextMonthBtn = screen.getByRole('button', { name: /next month/i })
 
       userEvent.click(nextMonthBtn)
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2020-06-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2020-06-20`)
 
-      expect(screen.getByTestId('2020-06-01').textContent).toBe('01')
-      expect(screen.getByTestId('2020-06-30').textContent).toBe('30')
+      expect(screen.getByTestId('2020-06-01')).toHaveTextContent('01')
+      expect(screen.getByTestId('2020-06-30')).toHaveTextContent('30')
     })
 
     it('should change to April 2020, on `Prev Month` clicked.', () => {
@@ -87,11 +87,11 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       const prevMonthBtn = screen.getByRole('button', { name: /prev month/i })
 
       userEvent.click(prevMonthBtn)
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2020-04-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2020-04-20`)
 
-      expect(screen.getByTestId('2020-04-01').textContent).toBe('01')
-      expect(screen.getByTestId('2020-04-30').textContent).toBe('30')
+      expect(screen.getByTestId('2020-04-01')).toHaveTextContent('01')
+      expect(screen.getByTestId('2020-04-30')).toHaveTextContent('30')
     })
 
     it('should go to May 2020, on `Go to Selected Date` clicked.', () => {
@@ -105,11 +105,11 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       })
 
       userEvent.click(goToSelectedDateBtn)
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2020-05-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2020-05-20`)
 
-      expect(screen.getByTestId('2020-05-01').textContent).toBe('01')
-      expect(screen.getByTestId('2020-05-31').textContent).toBe('31')
+      expect(screen.getByTestId('2020-05-01')).toHaveTextContent('01')
+      expect(screen.getByTestId('2020-05-31')).toHaveTextContent('31')
     })
 
     it('should go to `Today` date, on `Go to Today` clicked.', () => {
@@ -123,8 +123,8 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       })
 
       userEvent.click(goToTodayBtn)
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(
         `View Date: ${format(new Date(), dateFormatString)}`,
       )
     })
@@ -141,8 +141,8 @@ describe('useDatePicker with DatePicker __mock__.', () => {
           name: /next month/i,
         }),
       )
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2020-06-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2020-06-20`)
 
       // reset to initial date
       userEvent.click(
@@ -150,8 +150,8 @@ describe('useDatePicker with DatePicker __mock__.', () => {
           name: /reset to initial date/i,
         }),
       )
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2020-05-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2020-05-20`)
     })
   })
 
@@ -162,13 +162,13 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       const selectedDateLabel = screen.getByText(/selected date:/i)
       const viewDateLabel = screen.getByText(/view date:/i)
 
-      expect(selectedDateLabel.textContent).toBe(`Selected Date: 2020-05-20`)
-      expect(viewDateLabel.textContent).toBe(`View Date: 2020-05-20`)
+      expect(selectedDateLabel).toHaveTextContent(`Selected Date: 2020-05-20`)
+      expect(viewDateLabel).toHaveTextContent(`View Date: 2020-05-20`)
 
       userEvent.click(screen.getByTestId('2020-05-01'))
 
-      expect(selectedDateLabel.textContent).toBe('Selected Date: 2020-05-01')
-      expect(screen.getByTestId('2020-05-01').getAttribute('value')).toBe(
+      expect(selectedDateLabel).toHaveTextContent('Selected Date: 2020-05-01')
+      expect(screen.getByTestId('2020-05-01')).toHaveValue(
         '{"isSelected":true,"isToday":false}',
       )
     })
@@ -182,11 +182,9 @@ describe('useDatePicker with DatePicker __mock__.', () => {
       })
       render(<DatePicker initialDate={today} />)
 
-      expect(
-        screen
-          .getByTestId(format(today, dateFormatString))
-          .getAttribute('value'),
-      ).toBe('{"isSelected":true,"isToday":true}')
+      expect(screen.getByTestId(format(today, dateFormatString))).toHaveValue(
+        '{"isSelected":true,"isToday":true}',
+      )
     })
   })
 })

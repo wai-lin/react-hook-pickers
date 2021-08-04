@@ -1,17 +1,16 @@
 module.exports = {
   extends: [
     'plugin:jest-dom/recommended',
-    'plugin:react-hooks/recommended',
     // 'plugin:testing-library/recommended',
     // 'plugin:testing-library/react',
   ],
   plugins: [
-    'react-hooks',
     'jest-dom',
     // 'testing-library'
   ],
   overrides: [
     {
+      files: ['src/**/*.ts', 'src/**/*.tsx'],
       env: {
         node: true,
         commonjs: true,

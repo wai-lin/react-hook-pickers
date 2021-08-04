@@ -18,16 +18,16 @@ describe('dateStringZeroPreFixer func.', () => {
 describe('datesOfMonth func.', () => {
   it('should get correct dates length.', () => {
     // May 2020
-    let dates = datesOfMonth(5, 2020)
+    let dates = datesOfMonth(4, 2020)
     expect(dates.length).toBe(31)
     // Feb 2020
-    dates = datesOfMonth(2, 2020)
+    dates = datesOfMonth(1, 2020)
     expect(dates.length).toBe(29)
     // Jun 2020
-    dates = datesOfMonth(6, 2020)
+    dates = datesOfMonth(5, 2020)
     expect(dates.length).toBe(30)
     // Feb 2019
-    dates = datesOfMonth(2, 2019)
+    dates = datesOfMonth(1, 2019)
     expect(dates.length).toBe(28)
   })
 })
@@ -35,7 +35,7 @@ describe('datesOfMonth func.', () => {
 describe('fillUpDatesOfPrevMonth func.', () => {
   it("should get correct prev month's last sliced dates.", () => {
     // Apr 2020, Prev month of May 2020
-    let dates = fillUpDatesOfPrevMonth(5, 2020)
+    let dates = fillUpDatesOfPrevMonth(4, 2020)
     expect(dates.length).toBe(5)
     expect(dates).toEqual([
       {
@@ -70,7 +70,7 @@ describe('fillUpDatesOfPrevMonth func.', () => {
 describe('fillUpDatesOfNextMonth func.', () => {
   it("should get correct next month's first sliced dates.", () => {
     // Jun 2020, Prev month of May 2020
-    let dates = fillUpDatesOfNextMonth(5, 2020)
+    let dates = fillUpDatesOfNextMonth(4, 2020)
     expect(dates.length).toBe(6)
     expect(dates).toEqual([
       {
