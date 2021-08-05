@@ -9,6 +9,9 @@
   "engines": {
     "node": ">=10"
   },
+  "workspaces": [
+    "example"
+  ],
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",

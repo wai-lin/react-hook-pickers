@@ -119,7 +119,7 @@ function useDatePicker({
    */
   function getCalendarViewControllers() {
     const goToMonth = (month: Month) =>
-      setViewDate(set(viewDate, { month: month - 1 }))
+      setViewDate(set(viewDate, { month: month }))
     const goToYear = (year: number) =>
       setViewDate(set(viewDate, { year: year }))
     const goToPrevMonth = () => setViewDate(sub(viewDate, { months: 1 }))

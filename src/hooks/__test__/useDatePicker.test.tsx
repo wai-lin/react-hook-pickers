@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event'
 // scripts
 import { dateFormatString } from '../../utils'
 // mock
-import { DatePicker } from './DatePicker'
+import { DatePicker } from '../__mock__/DatePicker'
 
 // 20th May 2020
 const initialDate = new Date(2020, 4, 20, 0, 0, 0, 0)

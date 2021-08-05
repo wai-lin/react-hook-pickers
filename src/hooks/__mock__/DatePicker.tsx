@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { format } from 'date-fns'
 // hooks
 import { useDatePicker } from '../useDatePicker'
@@ -66,7 +66,7 @@ const DatePicker: React.FunctionComponent<{ initialDate: Date }> = ({
         </label>
       </div>
       <CalendarController>
-        <button onClick={() => goToMonth(2)}>Go to February</button>
+        <button onClick={() => goToMonth(1)}>Go to February</button>
         <button onClick={() => goToYear(2018)}>Go to 2018</button>
         <button onClick={goToPrevMonth}>Prev Month</button>
         <button onClick={goToNextMonth}>Next Month</button>
