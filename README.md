@@ -1,5 +1,7 @@
 # React Hook Pickers
 
+Have you ever get tired of customizing the date and time pickers provided by the libraries? And you thought of building your own date picker, however you also don't have that much time or it's painful to build everything from scratch for you. All you just want to do is custom UI and forget about the state handling, generating the dates for each month, years, etc. But your UI/UX designers won't let you, because their design is cool. Here's the `react-hook-pickers` to rescue you from all the hassle.
+
 `react-hook-pickers` provide hooks for building Custom Date Picker UI without worrying about handling states. This library is inspired by [`react-hook-form`](https://react-hook-form.com/) and [`downshift`](https://www.downshift-js.com/).
 
 ---
@@ -35,10 +37,43 @@ import { useDatePickerState, useDatePicker } from 'react-hook-pickers'
 
 const initialDate = new Date()
 const datePickerStates = useDatePickerState(initialDate)
-const { getCalendarProps, getCalendarViewControllers } = useDatePicker(
+const { today, getCalendarProps, getCalendarViewControllers } = useDatePicker(
   datePickerStates,
 )
 ```
+
+#### `DatePickerProvider` and `useDatePickerProvider`
+
+This is the Context wrapper for the `useDatePicker`. You just provide `datePickerState` from the `useDatePickerState` to `DatePickerProvider` and you can use `useDatePickerProvider` anywhere inside it. With this, you can forget about props drilling.
+
+```tsx
+import {
+  useDatePickerState,
+  DatePickerProvider,
+  useDatePickerProvider,
+} from 'react-hook-pickers'
+
+const ChildComponent = () => {
+  const {
+    today,
+    getCalendarProps,
+    getCalendarViewControllers,
+  } = useDatePickerProvider()
+  return <>...</>
+}
+
+const ParentComponent = () => {
+  const initialDate = new Date()
+  const datePickerState = useDatePickerState(initialDate)
+  return (
+    <DatePickerProvider datePickerState={datePickerState}>
+      <ChildComponent />
+    </DatePickerProvider>
+  )
+}
+```
+
+---
 
 ## Example
 
@@ -63,6 +98,7 @@ reset: () => void;
 
 ```ts
 // useDatePicker hook return values
+today: Date
 getCalendarProps: () => {
     daysOfWeek: {
         DDDD: DDDD;

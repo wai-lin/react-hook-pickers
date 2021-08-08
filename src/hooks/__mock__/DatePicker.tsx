@@ -80,12 +80,12 @@ const DatePicker: React.FunctionComponent<{ initialDate: Date }> = ({
           <span key={d.DDDD}>{d.DDD}</span>
         ))}
         {/* Dates In Month */}
-        {fillUpDatesOfPrevMonthBtnProps({}).map(
+        {fillUpDatesOfPrevMonthBtnProps().map(
           ({ date, dateString, day, isToday, isSelected, ...d }) => (
             <button {...d} value={JSON.stringify({ isSelected, isToday })} />
           ),
         )}
-        {datesOfMonthBtnProps({}).map(
+        {datesOfMonthBtnProps().map(
           ({ date, dateString, day, isToday, isSelected, ...d }) => (
             <button
               style={{ width: '40px', height: '40px' }}
@@ -94,7 +94,7 @@ const DatePicker: React.FunctionComponent<{ initialDate: Date }> = ({
             />
           ),
         )}
-        {fillUpDatesOfNextMonthBtnProps({}).map(
+        {fillUpDatesOfNextMonthBtnProps().map(
           ({ date, dateString, day, isToday, isSelected, ...d }) => (
             <button {...d} value={JSON.stringify({ isSelected, isToday })} />
           ),
