@@ -1,6 +1,6 @@
 # React Hook Pickers
 
-`react-hook-pickers` provide hooks for building Custom Date Picker UI without worrying about handling states. This library is inspired by [`react-hook-form`](https://react-hook-form.com/), [`downshift`](https://www.downshift-js.com/).
+`react-hook-pickers` provide hooks for building Custom Date Picker UI without worrying about handling states. This library is inspired by [`react-hook-form`](https://react-hook-form.com/) and [`downshift`](https://www.downshift-js.com/).
 
 ---
 
@@ -43,13 +43,6 @@ const { getCalendarProps, getCalendarViewControllers } = useDatePicker(
 ## Example
 
 [![Edit react-hook-pickers__examples](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-hook-pickers-examples-2c7ex?fontsize=14&hidenavigation=1&theme=dark)
-
-<iframe src="https://codesandbox.io/embed/react-hook-pickers-examples-2c7ex?fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="react-hook-pickers__examples"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
 
 ---
 
@@ -146,6 +139,7 @@ type Month = 0 | 1 | 2 | ... | 11 // JavaScript month indexes
 - [x] Date Picker (WIP)
 - [ ] Documentation
 - [ ] Date Range Picker (although it is possible to build `date range picker` with the current `useDatePickerState` hook, it would be nice to give the pre configured hooks for the date range picker.)
+- [ ] Accessibility
 - [ ] Time Picker
 - [ ] Primitive UI Components
 

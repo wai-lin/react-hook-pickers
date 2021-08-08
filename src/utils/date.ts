@@ -68,7 +68,7 @@ function dateStringZeroPreFixer(date: DateNumber) {
 
 /**
  * get dates array of provided month and year
- * @param month 1 to 12
+ * @param month 0 to 11
  * @param year FullYear
  */
 function datesOfMonth(month: Month, year: number) {
@@ -89,7 +89,7 @@ function datesOfMonth(month: Month, year: number) {
  * ```
  * fillUpDatesOfPrevMonth(5, 2020) // return `26 to 30 dates of April 2020`
  * ```
- * @param month 1 to 12
+ * @param month 0 to 11
  * @param year FullYear
  */
 function fillUpDatesOfPrevMonth(month: Month, year: number) {
@@ -108,7 +108,7 @@ function fillUpDatesOfPrevMonth(month: Month, year: number) {
  * ```
  * fillUpDatesOfNextMonth(5, 2020) // return `1 to 6 dates of June 2020`
  * ```
- * @param month 1 to 12
+ * @param month 0 to 11
  * @param year FullYear
  */
 function fillUpDatesOfNextMonth(month: Month, year: number) {
