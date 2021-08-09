@@ -6,7 +6,10 @@ interface DatePickerProviderProps {
 }
 
 const DatePickerContext = React.createContext<
-  ReturnType<typeof useDatePicker> | undefined
+  | ({ datePickerState: ReturnType<typeof useDatePickerState> } & ReturnType<
+      typeof useDatePicker
+    >)
+  | undefined
 >(undefined)
 
 const DatePickerProvider: React.FC<DatePickerProviderProps> = ({
@@ -16,7 +19,9 @@ const DatePickerProvider: React.FC<DatePickerProviderProps> = ({
   const datePickerBlocks = useDatePicker(datePickerState)
 
   return (
-    <DatePickerContext.Provider value={datePickerBlocks}>
+    <DatePickerContext.Provider
+      value={{ datePickerState, ...datePickerBlocks }}
+    >
       {children}
     </DatePickerContext.Provider>
   )

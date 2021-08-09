@@ -55,6 +55,7 @@ import {
 
 const ChildComponent = () => {
   const {
+    datePickerState,
     today,
     getCalendarProps,
     getCalendarViewControllers,

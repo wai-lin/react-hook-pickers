@@ -26,7 +26,7 @@
     "size": "size-limit",
     "analyze": "size-limit --why",
     "commit": "git add . && cz",
-    "release": "standard-version"
+    "release": "npm run lint && npm run test && npm run build && standard-version"
   },
   "peerDependencies": {
     "react": ">=16"
