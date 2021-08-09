@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/wai-lin/react-hook-pickers/compare/v0.2.0...v0.2.1) (2021-08-09)
+
+
+### Features
+
+* **date-picker-provider:** useDatePickerProvider now also provide datePickerState back ([75e2dd2](https://github.com/wai-lin/react-hook-pickers/commit/75e2dd203ecea684131ae96a972849c2180147a4))
+
 ## [0.2.0](https://github.com/wai-lin/react-hook-pickers/compare/v0.1.2...v0.2.0) (2021-08-08)
 
 ### ⚠ BREAKING CHANGES
