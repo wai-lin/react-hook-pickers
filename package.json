@@ -3,6 +3,17 @@
     "type": "git",
     "url": "https://github.com/wai-lin/react-hook-pickers"
   },
+  "keywords": [
+    "react",
+    "react-datepicker",
+    "react-timepicker",
+    "hook",
+    "react-hook",
+    "react-hook-pickers",
+    "typescript",
+    "datepicker",
+    "timepicker"
+  ],
   "version": "0.2.1",
   "license": "MIT",
   "main": "dist/index.js",
